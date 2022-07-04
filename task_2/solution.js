@@ -8,11 +8,12 @@ function calcShipping(sum, min, shipping) {
     let shippingSum; // создайте переменную shippingSum
 
     if (productsSum == 0 || productsSum >= freeShippingMinSum) { // если productsSum равно 0, если productsSum Больше или равна freeShippingMinSum,
-    shippingSum = 0 
-} // то shippingSum присвоить значение 0
-    else (productsSum >= 0 || productsSum < freeShippingMinSum) { // если productsSum больше 0 и меньше freeShippingMinSum,
-    shippingSum = shippingPrice 
-} // то shippingSum присвоить значение shippingPrice
+      shippingSum = 0 
+        } // то shippingSum присвоить значение 0
+        else {
+        (productsSum >= 0 || productsSum < freeShippingMinSum) // если productsSum больше 0 и меньше freeShippingMinSum,
+        shippingSum = shippingPrice 
+        } // то shippingSum присвоить значение shippingPrice
 
     console.log("Стоимость доставки:" + shippingSum);// Конец решения задания №2.1.
 
@@ -26,15 +27,9 @@ function calcDiscount(sum, min, discount) {
 
     // Задание №2.2. Рассчитать скидку
 
-    let discountSum;// создайте переменную discountSum
+    let discountSum = productsSum >= discountMinSum ? productsSum / 100 * discountPart : 0;
 
-    if (productsSum >= discountMinSum) {// если productsSum больше или равно discountMinSum,
-    discountSum = productsSum/100*discountPart
-} // то присвойте discountSum значение discountPart процентов от productsSum,
-    else {discountSum = 0
-} // иначе присвойте discountSum значение 0
-
-    console.log("Скидка:" + discountSum);// Конец решения задания №2.2.
+    console.log("Скидка:" + discountSum); // Конец решения задания №2.2.
 
     return discountSum;
 }
@@ -53,7 +48,7 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     let freeShipping; // создайте переменную freeShipping
     // запишите без использования if или любых других условий:
     freeShipping = shippingSum == 0;// если shippingSum равно нулю, то freeShipping должна быть равна true, иначе freeShipping должна быть равна false
-    consol.log("Сумма скидки: " + totalSum, "Доставка: " + freeShipping);
+    console.log("Сумма скидки: " + totalSum, "Доставка: " + freeShipping);
 
     // Конец решения задачи №2.3.
 
