@@ -14,11 +14,11 @@ function renderCartItem(item) {
     // например,
     // 5 × 500.00 ₽ = 2500 ₽
     let itemCountText = " "; // 1. Создайте переменную itemCountText, равную пустой строке
-        itemCountText = itemCountText + console.log(product[0].count); // 2. Присвойте переменной itemCountText результат склеивания itemCountText и количества
+        itemCountText = itemCountText + console.log(item[0].count); // 2. Присвойте переменной itemCountText результат склеивания itemCountText и количества
         itemCountText = itemCountText + ` × `; // 3. Присвойте переменной itemCountText результат склеивания itemCountText и ` × `
-        itemCountText = itemCountText + console.log(product[0].price); // 4. Присвойте переменной itemCountText результат склеивания itemCountText и цены
+        itemCountText = itemCountText + console.log(item[0].price); // 4. Присвойте переменной itemCountText результат склеивания itemCountText и цены
         itemCountText = itemCountText + ` ₽ = `; // 5. Присвойте переменной itemCountText результат склеивания itemCountText и ` ₽ = `
-    let sum = console.log(product[0].count) * console.log(product[0].price); // 6. Создайте переменную sum и присвойте ей значение произведения количества и цены
+    let sum = console.log(item[0].count) * console.log(item[0].price); // 6. Создайте переменную sum и присвойте ей значение произведения количества и цены
         itemCountText = itemCountText + sum; // 7. Присвойте переменной itemCountText результат склеивания itemCountText и sum
         itemCountText = itemCountText + ` ₽`;// 8. Присвойте переменной itemCountText результат склеивания itemCountText и ` ₽`
     console.log(itemCountText); // Конец решения задания №3.1.
