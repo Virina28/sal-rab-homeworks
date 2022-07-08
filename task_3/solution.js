@@ -3,7 +3,7 @@ function renderCartItem(item) {
 
     // Задание №3.1. Формирование строки корзины
 
-    item = [{id: 1, title: 'Пицца', count: 5, price: '500'}]; // product - объект вида {id: id, title: title, count: count, price: price}
+    // product - объект вида {id: id, title: title, count: count, price: price}
     // например, {id: 1, title: 'Пицца', count: 5, price: '500.00'}, где
     // id - идентификатор
     // title - наименование
@@ -14,11 +14,13 @@ function renderCartItem(item) {
     // например,
     // 5 × 500.00 ₽ = 2500 ₽
     let itemCountText = " "; // 1. Создайте переменную itemCountText, равную пустой строке
-        itemCountText = itemCountText + console.log(item[0].count); // 2. Присвойте переменной itemCountText результат склеивания itemCountText и количества
+    const resultCount = console.log(product.count);
+        itemCountText = itemCountText + resultCount; // 2. Присвойте переменной itemCountText результат склеивания itemCountText и количества
         itemCountText = itemCountText + ` × `; // 3. Присвойте переменной itemCountText результат склеивания itemCountText и ` × `
-        itemCountText = itemCountText + console.log(item[0].price); // 4. Присвойте переменной itemCountText результат склеивания itemCountText и цены
+    const resultPrice =  console.log(product.price);   
+        itemCountText = itemCountText + resultPrice; // 4. Присвойте переменной itemCountText результат склеивания itemCountText и цены
         itemCountText = itemCountText + ` ₽ = `; // 5. Присвойте переменной itemCountText результат склеивания itemCountText и ` ₽ = `
-    let sum = console.log(item[0].count) * console.log(item[0].price); // 6. Создайте переменную sum и присвойте ей значение произведения количества и цены
+    let sum = resultCount * resultPrice; // 6. Создайте переменную sum и присвойте ей значение произведения количества и цены
         itemCountText = itemCountText + sum; // 7. Присвойте переменной itemCountText результат склеивания itemCountText и sum
         itemCountText = itemCountText + ` ₽`;// 8. Присвойте переменной itemCountText результат склеивания itemCountText и ` ₽`
     console.log(itemCountText); // Конец решения задания №3.1.
