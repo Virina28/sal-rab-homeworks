@@ -3,8 +3,8 @@
 function parseProducts(json) {
     let data = JSON.parse(json);
     let products = data.products;
-console.log(products);
-
+return products;
+}
 function renderProductsCards(json) {// Напишите функцию renderProductsCards(json)
 // Аргументом функции является JSON
     clearProducts(); // Выполните функцию clearProducts - она уже написана в коде, просто вызовите ее, аргументы не требуются
@@ -14,6 +14,4 @@ function renderProductsCards(json) {// Напишите функцию renderPro
     for (let i = 0; i < length; i += 1) { // Напишите цикл, в котором перебираете все products от 0 до (length - 1)
     addProduct(products[i])
     }; // и выполняете addProduct с каждым элементом массива products (передавая элемент массива как аргумент)
-};
-return products;
 };
