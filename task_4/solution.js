@@ -3,7 +3,7 @@
 function parseProducts(json) {
     let data = JSON.parse(json);
     let products = data.products;
-console.log(parseProducts);
+console.log(products);
 
 function renderProductsCards(json) {// Напишите функцию renderProductsCards(json)
 // Аргументом функции является JSON
