@@ -33,25 +33,28 @@
 //    }
 // }
 
-function sendRequest(name, phone, address, goods, sum) { // функция sendRequest с аргументами имя клиента, телефон клиента, объект с адресом доставки, списоктоваров в заказе, стоимость заказа с учетом скидок и доставки
-    let client = {name, phone};
-    let street = '';
-    let house = '';
-    let entrance = '';
-    let floor = '';
-    let flat = '';
-    let address = {street, house, entrance, floor, flat};
-    let sum = sum;
-    let order = {address, sum};
-    let data = {client, order, goods}; // Создать объект дата со свойствами
-    goods = [{title, count}];
+function sendRequest(name, phone, address, goods, sum) {
+    let data = {
+        client: {name, phone}, 
+        goods: [
+        {title, count},
+        ],
+        order: {address, sum}
+    };
+
     let countOfGoods = goods.length;
-    for (let i = 0; i <= countOfGoods; i += 1) {
+
+    for (let i = 0; i < countOfGoods; i += 1) {
         data.goods.push(goods[i].title);
+        data.goods.push(goods[i].count);
     }
-    data.order.address = address;
-    data.order.sum = name + phone + address + goods + sum;
-    data.client = 'Иван';
-    let jsonData = JSON.stringify(data);
+
+    dataOrderAddress = street + ', ' + house + ', ' + entrance + ', ' + floor + ', ' + flat;
+    dataOrderSum = name + phone + address + goods + sum;
+
+    dataClient = name + ' ' + phone;
+
+    let jsonData = JSON.stringify({data});
+
     return jsonData;
-};
+}
